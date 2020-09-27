@@ -17,7 +17,7 @@ def get_japanese_emoticon(path, emoticon)
   library = load_library path
   retval = library.select {|key, value|  
     if value[:english] == emoticon
-      value[:japanese]
+      return value[:japanese]
     end}
   retval
 end
@@ -26,7 +26,7 @@ def get_english_meaning(path, emoticon)
   library = load_library path
   retval = library.select {|key, value|  
     if value[:japanese] == emoticon
-      key
+      return key
     end
     retval
     
